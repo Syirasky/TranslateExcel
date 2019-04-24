@@ -13,6 +13,11 @@ df = pd.read_excel(loc)
 print("Count in data record")
 print(df.count())
 
-EnWordStr = df['EN'][0].encode('utf-8')
-TranslatedEnStr = translator.translate(EnWordStr , dest='ms')
-print(EnWordStr," -> ", TranslatedEnStr.text.encode('utf-8'))
+start_at = 1
+end_at = 10
+
+for start_at in range(end_at):
+	EnWordStr = df['EN'][start_at].encode('utf-8')
+	TranslatedEnStr = translator.translate(EnWordStr , dest='ms')
+
+	print(df['EN'][start_at].encode('utf-8')," : ",TranslatedEnStr.text.encode('utf-8'))
